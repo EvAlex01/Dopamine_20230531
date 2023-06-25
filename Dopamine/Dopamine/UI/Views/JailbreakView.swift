@@ -174,7 +174,7 @@ struct JailbreakView: View {
             Task {
                 do {
 //                    try await checkForUpdates()
-					let dpDefaults = dopamineDefaults()
+		    let dpDefaults = dopamineDefaults()
                     if !dpDefaults.bool(forKey: "blockDopamineUpdates") {
                         try await checkForUpdates()
                     }
