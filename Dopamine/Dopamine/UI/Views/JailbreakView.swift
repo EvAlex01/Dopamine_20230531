@@ -173,7 +173,11 @@ struct JailbreakView: View {
         .onAppear {
             Task {
                 do {
-                    try await checkForUpdates()
+//                    try await checkForUpdates()
+					let dpDefaults = dopamineDefaults()
+                    if !dpDefaults.bool(forKey: "blockDopamineUpdates") {
+                        try await checkForUpdates()
+                    }
                 } catch {
                     Logger.log(error, type: .error, isStatus: false)
                 }
