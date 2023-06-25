@@ -111,7 +111,7 @@ cp "./basebin.tc" "./.tmp/basebin"
 # Tar /tmp to basebin.tar
 cd ".tmp"
 # only works with procursus tar for whatever reason
-DYLD_FALLBACK_LIBRARY_PATH=".." ../tar -cvf "../$TARGET" "./basebin" --owner=0 --group=0 
+DYLD_FALLBACK_LIBRARY_PATH=".." /opt/procursus/bin/gtar -cvf "../$TARGET" "./basebin" --owner=0 --group=0 
 cd -
 
 rm -rf ".tmp"
