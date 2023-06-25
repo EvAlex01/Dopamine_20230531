@@ -33,7 +33,7 @@ jobs:
       - name: Install Procursus
         uses: dhinakg/procursus-action@main
         with:
-          packages: ldid findutils sed coreutils trustcache make
+          packages: ldid findutils sed coreutils trustcache make file
 
       - name: Install THEOS (without SDKs)
         run: |
@@ -63,7 +63,7 @@ jobs:
           export BASEDIR="$(pwd)"
           export THEOS="${BASEDIR}/theos"
           find . -type f -name "*.sh" -exec chmod +x {} \;
-          find . -type f -exec file {} \; | grep "executable" | cut -d: -f1 | xargs chmod +x
+          find . -type f -exec /opt/procursus/bin/file {} \; | grep "executable" | cut -d: -f1 | xargs chmod +x
           gmake -j$(sysctl -n hw.physicalcpu)
           cp -a Dopamine/Dopamine.tipa Dopamine/Dopamine_${{ env.shorthash }}_${{ env.ctime }}.tipa
           cp -a Dopamine/Dopamine.tipa Dopamine/Dopamine_Latest.tipa
