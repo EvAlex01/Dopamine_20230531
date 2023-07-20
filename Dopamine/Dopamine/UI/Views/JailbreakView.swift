@@ -592,7 +592,7 @@ struct JailbreakView: View {
             //
         }
     }
-} 
+}
 
 struct JailbreakView_Previews: PreviewProvider {
     static var previews: some View {
