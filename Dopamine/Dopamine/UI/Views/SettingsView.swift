@@ -1,4 +1,4 @@
-// 
+//
 //  SettingsView.swift
 //  Fugu15
 //
